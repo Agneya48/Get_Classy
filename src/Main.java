@@ -37,5 +37,51 @@ public class Main {
         for(var p: folks) {
             System.out.println(p.toCSVRecord());
         }
+
+        String cvsTest1, cvsTest2, cvsTest3;
+        cvsTest1 = "";
+        cvsTest2 = "1";
+        cvsTest3 = "";
+        String div = ",";
+        String result = cvsTest1 + div + cvsTest2 + div + cvsTest3;
+        System.out.println(result);
+
+        String result2 = String.join(cvsTest1, div, cvsTest3, div, cvsTest2);
+        System.out.println(result2);
+
+        ArrayList<Product> goods = new ArrayList<>();
+        Product apple = new Product("apple", "red fruit", 1.99);
+        goods.add(apple);
+        Product orange = new Product("orange", "orange fruit", 1.25);
+        goods.add(orange);
+        Product banana = new Product("banana", "yellow fruit", 1.00);
+        goods.add(banana);
+
+        for (Product p: goods) {
+            System.out.println(p);
+        }
+        System.out.println(goods);
+        for (Product p: goods) {
+            System.out.println(p.toString());
+        }
+
+        for (var p: goods) {
+            System.out.println(p.toCSVRecord());
+        }
+        for (var p: folks) {
+            System.out.println(p.toCSVRecord());
+        }
+        for (var p: goods) {
+            System.out.println(p.toJSONRecord());
+        }
+        for (var p: folks) {
+            System.out.println(p.toJSONRecord());
+        }
+        for (var p: goods) {
+            System.out.println(p.toXMLRecord());
+        }
+        for (var p: folks) {
+            System.out.println(p.toXMLRecord());
+        }
     }
 }

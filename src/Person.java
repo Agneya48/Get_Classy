@@ -18,6 +18,7 @@ public class Person
     private int YOB;
     static private int IDSeed = 1;
 
+
     public Person(String IDNum, String firstName, String lastName, String title, int YOB)
     {
         this.IDNum = IDNum;
@@ -177,7 +178,7 @@ public class Person
     {
         String retString = "";
         char DQ = '\u0022';  // Assign the double quote char to a variable
-        retString =  "{" + DQ + "IDNum" + DQ + ":" + DQ + this.IDNum + DQ + ",";
+        retString =  "{" + DQ + "IDNum" + DQ + ":" + DQ + this.IDNum + DQ + ", ";
         retString += DQ + "firstName" + DQ + ":" + DQ + this.firstName + DQ + ",";
         retString += " " + DQ + "lastName"  + DQ + ":" + DQ + this.lastName + DQ + ",";
         retString += " " + DQ + "title" + DQ + ":" + DQ + this.title + DQ + ",";
