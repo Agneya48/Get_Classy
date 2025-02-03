@@ -11,15 +11,12 @@ public class PersonGenerator {
         Scanner in = new Scanner(System.in);
         boolean done = false;
 
-        String personRec = "";
-        String ID = "";
-        String firstName = "";
-        String lastName = "";
-        String title = "";
-        String yearOfBirth = ""; /* I prefer using RegEx for date of birth, and thus set it to a String
-        getRangedInt will also work if it's ever important to have an int value before
-        converting to a String for file writing (like doing calculations before saving)
-         */
+        String personRec;
+        String ID;
+        String firstName;
+        String lastName;
+        String title;
+        int yearOfBirth;
         String div =",";
 
         do {
@@ -29,7 +26,7 @@ public class PersonGenerator {
             firstName = SafeInput.getNonZeroLenString(in, "Enter the first name");
             lastName = SafeInput.getNonZeroLenString(in, "Enter the last name");
             title = SafeInput.getNonZeroLenString(in, "Enter the title");
-            yearOfBirth = SafeInput.getRegExString(in, "Enter year of birth [4 digits]", "\\d{4}");
+            yearOfBirth = SafeInput.getRangedInt(in, "Enter the year of birth", 1940, 2010);
 
             personRec = ID + div + firstName + div + lastName + div + title + div + yearOfBirth;
             System.out.println();

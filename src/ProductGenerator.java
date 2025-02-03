@@ -4,7 +4,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Product {
+public class ProductGenerator {
     public static void main(String[] args) {
 
         ArrayList <String> allProductRecs = new ArrayList<>();
