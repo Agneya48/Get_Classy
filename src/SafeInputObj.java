@@ -23,7 +23,7 @@ public class SafeInputObj {
 
         String retString = ""; // Loop runs until String isn't blank
         do {
-            System.out.print("\n" + prompt + ": ");
+            System.out.print(prompt + ": ");
             retString = pipe.nextLine();
         } while(retString.length() == 0);
 
@@ -102,7 +102,7 @@ public class SafeInputObj {
         String buffer = "";
 
         do{
-            System.out.print(prompt + " [" + low + "-" + high + "]: ");
+            System.out.print("\n" + prompt + " [" + low + "-" + high + "]: ");
             buffer = pipe.nextLine();
             try {
                 inputInt = Integer.parseInt(buffer);

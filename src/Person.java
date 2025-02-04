@@ -7,7 +7,7 @@ import java.util.Calendar;
  * Currently, no support for blank or null entries aside from ID, until I know how
  * the file formats handle that.
  *
- * @author: Josh Hampton
+ * @author: Josh Hampton hamptojt@mail.uc.edu
  */
 public class Person
 {
@@ -26,6 +26,7 @@ public class Person
         this.lastName = lastName;
         this.title = title;
         this.YOB = YOB;
+        IDSeed++;
     }
 
     public Person(String firstName, String lastName, String title, int YOB)
@@ -94,17 +95,13 @@ public class Person
         Person.IDSeed = IDSeed;
     }
 
-    private String genIDNum() {
-        String newID = "" + IDSeed;
-        while(newID.length() < 6)
-        {
-            newID = "0" + newID;
-        }
-
-        IDSeed++;
-
+    private synchronized String genIDNum() {
+        // had some bugs here, so switched to synchronize to eliminate possibility of threading causing issues
+        String newID = String.format("%06d", IDSeed);
+        IDSeed++; // Increment the static IDSeed for the next ID generation.
         return newID;
     }
+
 
     public String getIDNum() {
         return IDNum;

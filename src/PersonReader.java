@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class PersonReader {
     public static void main(String[] args) {
@@ -9,6 +10,8 @@ public class PersonReader {
         JFileChooser chooser = new JFileChooser();
         File selectedFile;
         String lineRecord = "";
+        Person personRec;
+        ArrayList<Person> allPersonRecs = new ArrayList<>();
 
         try {
 
@@ -24,8 +27,7 @@ public class PersonReader {
                      BufferedReader reader = new BufferedReader(new InputStreamReader(in)))
                 {
                     int headerWidth = 44;
-
-                    //print the header of the table displaying the read file
+                    /*print the header of the table displaying the read file
                     System.out.println();
                     System.out.printf("%-8s%-12s%-12s%-6s%6s%n", "ID#", "Firstname", "Lastname", "Title", "YOB");
                     for (int i = 0; i < headerWidth; i++) {
@@ -39,11 +41,29 @@ public class PersonReader {
                     while (reader.ready()) {
                         lineRecord = reader.readLine();
                         String[] splitRecs = lineRecord.split(",");
-                        // formated line output, make sure width values match those in header
+                        /*formated line output, make sure width values match those in header
                         System.out.printf("%-8s%-12s%-12s%-6s%6s%n", splitRecs[0], splitRecs[1], splitRecs[2],
-                                splitRecs[3], splitRecs[4]);
+                                splitRecs[3], splitRecs[4]);*/
+                        personRec = new Person(splitRecs[0], splitRecs[1], splitRecs[2], splitRecs[3],
+                                Integer.parseInt(splitRecs[4]));
+                        allPersonRecs.add(personRec);
                     }
+
+                    //print the header of the table displaying the read file
+                    System.out.println();
+                    System.out.printf("%-8s%-12s%-12s%-6s%6s%n", "ID#", "Firstname", "Lastname", "Title", "YOB");
+                    for (int i = 0; i < headerWidth; i++) {
+                        System.out.print("=");
+                    }
+                    System.out.println();
+
+                    for (Person person : allPersonRecs) {
+                        System.out.printf("%-8s%-12s%-12s%-6s%6s%n", person.getIDNum(), person.getFirstName(), person.getLastName(),
+                                person.getTitle(), person.getYOB());
+                    }
+
                     System.out.println("\n\nData file read!");
+
                 }
             } else  // User closed the chooser without selecting a file
             {

@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Person> folks = new ArrayList<>();
+        Person test1 = new Person ("000001", "Test", "Test", "Mr", 1999);
+        folks.add(test1);
         Person bilbo = new Person("Bilbo", "Baggins",
                 "Esq.", 1150);
 

@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 
 public class ProductReader {
     public static void main(String[] args) {
@@ -9,6 +10,8 @@ public class ProductReader {
         JFileChooser chooser = new JFileChooser();
         File selectedFile;
         String lineRecord = "";
+        Product productRec;
+        ArrayList<Product> allProductRecs = new ArrayList<>();
         double cost = 0.0;
 
         try {
@@ -27,12 +30,12 @@ public class ProductReader {
                     int headerWidth = 64;
 
                     //print the header of the table displaying the read file
-                    System.out.println();
+                    /*System.out.println();
                     System.out.printf("%-10s%-14s%-30s%-8s%n", "ID#", "Name", "Description", "Cost");
                     for (int i = 0; i < headerWidth; i++) {
                         System.out.print("=");
-                    }
-                    System.out.println();
+                    }*/
+                    //System.out.println();
 
                     /*print each line; splits into an array of String objects using the comma as the splitter
                     for easier formatting
@@ -42,11 +45,25 @@ public class ProductReader {
                         String[] splitRecs = lineRecord.split(",");
                         //convert cost from String back to double
                         cost = Double.parseDouble(splitRecs[3]);
-                        // formated line output, make sure width values match those in header
+
+                        productRec = new Product(splitRecs[0], splitRecs[1], splitRecs[2], cost);
+                        allProductRecs.add(productRec);
+                        /* formated line output, make sure width values match those in header
                         System.out.printf("%-10s%-14s%-30s$%-8.2f%n", splitRecs[0], splitRecs[1], splitRecs[2],
-                                cost);
+                                cost);*/
                     }
                     System.out.println("\n\nData file read!");
+
+                    System.out.println();
+                    System.out.printf("%-10s%-14s%-30s%-8s%n", "ID#", "Name", "Description", "Cost");
+                    for (int i = 0; i < headerWidth; i++) {
+                        System.out.print("=");
+                    }
+                    System.out.println();
+                    for (Product product : allProductRecs) {
+                        System.out.printf("%-10s%-14s%-30s$%-8.2f%n", product.getIDNum(), product.getName(), product.getDescription(), product.getCost());
+                    }
+
                 }
             } else  // User closed the chooser without selecting a file
             {

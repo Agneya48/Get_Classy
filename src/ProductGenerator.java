@@ -7,37 +7,33 @@ import java.util.Scanner;
 public class ProductGenerator {
     public static void main(String[] args) {
 
-        ArrayList <String> allProductRecs = new ArrayList<>();
-        Scanner in = new Scanner(System.in);
+        ArrayList <Product> allProductRecs = new ArrayList<>();
+        SafeInputObj in = new SafeInputObj();
+        Product productRec;
         boolean done = false;
 
-        String productRec = "";
-        String ID = "";
         String name = "";
         String description = "";
         double cost = 0.0;
-        String div =",";
 
         do {
             System.out.println();
             System.out.println("New Product Entry");
-            ID = SafeInput.getRegExString(in, "Enter the ID [6 digits]", "\\d{6}");
-            name = SafeInput.getNonZeroLenString(in, "Enter product name");
-            description = SafeInput.getNonZeroLenString(in, "Enter description");
-            cost = SafeInput.getDouble(in, "Enter cost");
+            name = in.getNonZeroLenString("Enter product name");
+            description = in.getNonZeroLenString("Enter description");
+            cost = in.getDouble("Enter cost");
 
-            productRec = ID + div + name + div + description + div + cost;
+            productRec = new Product(name, description, cost);
+
             System.out.println();
             System.out.println(productRec);
             System.out.println();
 
-            done = SafeInput.getYNConfirm(in, "Data entry complete? [Y/N]");
+            done = in.getYNConfirm("Data entry complete? [Y/N]");
 
             allProductRecs.add(productRec);
 
         }while(!done);
-
-        in.close();
 
         File workingDirectory = new File(System.getProperty("user.dir"));
         Path file = Paths.get(workingDirectory.getPath() + "\\src\\productTestData.txt");
@@ -45,9 +41,10 @@ public class ProductGenerator {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file.toFile())))
         {
 
-            for(String rec : allProductRecs)
+            for(Product rec : allProductRecs)
             {
-                writer.write(rec, 0, rec.length());
+                String csvRec = rec.toCSVRecord();
+                writer.write(csvRec, 0, csvRec.length());
                 // 0 is where to start (1st char) the write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line

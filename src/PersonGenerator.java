@@ -7,39 +7,34 @@ import java.util.Scanner;
 public class PersonGenerator {
     public static void main(String[] args) {
 
-        ArrayList <String>allPersonRecs = new ArrayList<>();
-        Scanner in = new Scanner(System.in);
+        ArrayList <Person>allPersonRecs = new ArrayList<>();
+        SafeInputObj in = new SafeInputObj();
         boolean done = false;
 
-        String personRec;
-        String ID;
+
         String firstName;
         String lastName;
         String title;
         int yearOfBirth;
-        String div =",";
 
         do {
             System.out.println();
             System.out.println("New Person Entry");
-            ID = SafeInput.getRegExString(in, "Enter the ID [6 digits]", "\\d{6}");
-            firstName = SafeInput.getNonZeroLenString(in, "Enter the first name");
-            lastName = SafeInput.getNonZeroLenString(in, "Enter the last name");
-            title = SafeInput.getNonZeroLenString(in, "Enter the title");
-            yearOfBirth = SafeInput.getRangedInt(in, "Enter the year of birth", 1940, 2010);
+            firstName = in.getNonZeroLenString("Enter first name");
+            lastName = in.getNonZeroLenString("Enter last name");
+            title = in.getNonZeroLenString("Enter their title");
+            yearOfBirth = in.getRangedInt("Enter the year of birth", 1940, 2010);
 
-            personRec = ID + div + firstName + div + lastName + div + title + div + yearOfBirth;
+            Person personRec = new Person(firstName, lastName, title, yearOfBirth);
             System.out.println();
             System.out.println(personRec);
             System.out.println();
 
-            done = SafeInput.getYNConfirm(in, "Data entry complete? [Y/N]");
+            done = in.getYNConfirm("Data entry complete? [Y/N]");
 
             allPersonRecs.add(personRec);
 
         }while(!done);
-
-        in.close();
 
         File workingDirectory = new File(System.getProperty("user.dir"));
         Path file = Paths.get(workingDirectory.getPath() + "\\src\\personTestData.txt");
@@ -47,9 +42,10 @@ public class PersonGenerator {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file.toFile())))
         {
 
-            for(String rec : allPersonRecs)
+            for(Person rec : allPersonRecs)
             {
-                writer.write(rec, 0, rec.length());
+                String csvRec = rec.toCSVRecord();
+                writer.write(csvRec, 0, csvRec.length());
                 // 0 is where to start (1st char) the write
                 // rec. length() is how many chars to write (all)
                 writer.newLine();  // adds the new line
