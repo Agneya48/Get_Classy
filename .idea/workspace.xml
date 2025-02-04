@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9dbdb647-91e7-491d-8ad8-aa289d8c64bd" name="Changes" comment="Completed testing">
+      <change afterPath="$PROJECT_DIR$/src/ObjInputTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/personTestData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/personTestData.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/productTestData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/productTestData.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,7 +88,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProductReader">
+  <component name="RunManager" selected="Application.ObjInputTest">
+    <configuration name="ObjInputTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ObjInputTest" />
+      <module name="Get_Classy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PersonGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PersonGenerator" />
       <module name="Get_Classy" />
@@ -118,22 +124,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Get_Classy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ObjInputTest" />
         <item itemvalue="Application.ProductReader" />
         <item itemvalue="Application.ProductGenerator" />
         <item itemvalue="Application.PersonReader" />
         <item itemvalue="Application.PersonGenerator" />
-        <item itemvalue="JUnit.ProductTest" />
       </list>
     </recent_temporary>
   </component>
@@ -155,7 +152,7 @@
       <updated>1738384273702</updated>
       <workItem from="1738582368398" duration="12990000" />
       <workItem from="1738600968240" duration="21769000" />
-      <workItem from="1738623257289" duration="19513000" />
+      <workItem from="1738623257289" duration="20335000" />
     </task>
     <task id="LOCAL-00001" summary="Imported files from Practicum">
       <option name="closed" value="true" />
@@ -205,7 +202,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738641965486</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Completed testing">
+      <option name="closed" value="true" />
+      <created>1738643215276</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1738643215276</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
