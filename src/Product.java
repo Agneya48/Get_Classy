@@ -27,15 +27,10 @@ public class Product {
     }
 
 
-    private String genIDNum() {
-        String newID = "" + IDSeed;
-        while(newID.length() < 6)
-        {
-            newID = "0" + newID;
-        }
-
-        IDSeed++;
-
+    private synchronized String genIDNum() {
+        // had some bugs here, so switched to synchronize to eliminate possibility of threading causing issues
+        String newID = String.format("%06d", IDSeed);
+        IDSeed++; // Increment the static IDSeed for the next ID generation.
         return newID;
     }
 

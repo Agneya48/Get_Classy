@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dbdb647-91e7-491d-8ad8-aa289d8c64bd" name="Changes" comment="Completed SafeInputObj">
-      <change afterPath="$PROJECT_DIR$/test/PersonTest.java" afterDir="false" />
+    <list default="true" id="9dbdb647-91e7-491d-8ad8-aa289d8c64bd" name="Changes" comment="Completed coding">
+      <change afterPath="$PROJECT_DIR$/test/ProductTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/SafeInputObjTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Get_Classy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Get_Classy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PersonGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PersonReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProductGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProductReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SafeInputObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SafeInputObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/PersonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/PersonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +61,9 @@
     "JUnit.PersonTest.getIDSeed.executor": "Run",
     "JUnit.PersonTest.setIDSeed.executor": "Run",
     "JUnit.PersonTest.toCSVRecord.executor": "Run",
+    "JUnit.ProductTest.executor": "Run",
+    "JUnit.SafeInputObjTest.executor": "Run",
+    "JUnit.SafeInputObjTest.getInt.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -81,7 +79,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -93,28 +91,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProductReader">
-    <configuration name="PersonGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PersonGenerator" />
-      <module name="Get_Classy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersonReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PersonReader" />
-      <module name="Get_Classy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ProductGenerator" />
-      <module name="Get_Classy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ProductTest">
     <configuration name="ProductReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ProductReader" />
       <module name="Get_Classy" />
@@ -131,13 +108,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Get_Classy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ProductTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SafeInputObjTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Get_Classy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SafeInputObjTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SafeInputObjTest.getInt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Get_Classy" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SafeInputObjTest" />
+      <option name="METHOD_NAME" value="getInt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ProductReader" />
-        <item itemvalue="Application.ProductGenerator" />
-        <item itemvalue="Application.PersonReader" />
-        <item itemvalue="Application.PersonGenerator" />
+        <item itemvalue="JUnit.ProductTest" />
+        <item itemvalue="JUnit.SafeInputObjTest.getInt" />
+        <item itemvalue="JUnit.SafeInputObjTest" />
         <item itemvalue="JUnit.PersonTest" />
+        <item itemvalue="Application.ProductReader" />
       </list>
     </recent_temporary>
   </component>
@@ -159,7 +164,7 @@
       <updated>1738384273702</updated>
       <workItem from="1738582368398" duration="12990000" />
       <workItem from="1738600968240" duration="21769000" />
-      <workItem from="1738623257289" duration="13564000" />
+      <workItem from="1738623257289" duration="18288000" />
     </task>
     <task id="LOCAL-00001" summary="Imported files from Practicum">
       <option name="closed" value="true" />
@@ -193,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738617910764</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Completed coding">
+      <option name="closed" value="true" />
+      <created>1738637041819</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738637041819</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +217,8 @@
     <MESSAGE value="Completed Product class" />
     <MESSAGE value="Completed Person and Product classes" />
     <MESSAGE value="Completed SafeInputObj" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed SafeInputObj" />
+    <MESSAGE value="Completed coding" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed coding" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

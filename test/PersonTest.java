@@ -102,20 +102,8 @@ class PersonTest {
     void toXMLRecord() {
         assertEquals("<Person><IDNum>000001</IDNum><firstName>Bob</firstName><lastName>Tester1</lastName><YOB>1999</YOB></Person>", p1.toXMLRecord());
         assertEquals("<Person><IDNum>000002</IDNum><firstName>Sally</firstName><lastName>Tester2</lastName><YOB>1990</YOB></Person>", p2.toXMLRecord());
-        public String toXMLRecord()
-{
-    String retString = "";
-
-    retString = "<Person>" + "<IDNum>" + this.IDNum + "</IDNum>";
-    retString += "<firstName>" + this.firstName + "</firstName>";
-    retString += "<lastName>" + this.lastName + "</lastName>";
-    retString += "<YOB>" + this.YOB + "</YOB></Person>";
-
-    return retString;
-}
-```
-Here's the code used to make the toXMLRecord method. Could you generate a correct test or two?
     }
+
 
     @Test
     void toCSVRecord() {
